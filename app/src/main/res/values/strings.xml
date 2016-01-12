@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Lisbon Pocket</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splas">SplashActivity</string>
+    <string name="title_activity_loading_task">LoadingTask</string>
+    <string name="activity_splash_title_line_one">Loading . . . </string>
+    <string name="activity_splash_title_line_two">SPLASH SCREEN</string>
+    <string name="activity_splash_title_line_three">TUTORIAL</string>
+    <string name="activity_main_made_it">You did it!</string>
+    <string name="title_activity_where__i__am">Where Am I?</string>
+    <string name="title_activity_services_arround">Services Arround</string>
+    <string name="title_activity_recreation">SERVICES</string>
+    <string name="title_activity_local_services">Local Services</string>
+    <string name="title_activity_restaurants">Restaurants</string>
+    <string name="title_activity_find_places">Founded Places</string>
+</resources>
