@@ -17,13 +17,15 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" /> <!-- Permissions required for GCM -->
+    <!-- Permissions required for GCM -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- Optional permission for App measurement to run. -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
     <!--
  <uses-feature
         android:glEsVersion="0x00020000"
@@ -58,13 +60,6 @@
             android:name="com.lisbonpocket.code.kawakuti.lisbonpocket.ServicesArround"
             android:label="@string/title_activity_services_arround"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <!--
-            <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCtelXQSeziHAeiygawHZmwD1-tuqdaGg8" />
-        -->
-
         <activity
             android:name="com.lisbonpocket.code.kawakuti.lisbonpocket.ServiceChoosed"
             android:label="@string/title_activity_recreation"
@@ -73,22 +68,6 @@
             android:name="com.lisbonpocket.code.kawakuti.lisbonpocket.FindPlaces"
             android:label="@string/title_activity_find_places"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAy_eYMGLa_HyxNTR2SqVcE0qbEUGeh8lU" />
-        <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
-        <activity
-            android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity"
-            android:theme="@style/Theme.IAPTheme" />
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
 
         <provider
             android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"
@@ -106,7 +85,18 @@
         <service
             android:name="com.google.android.gms.measurement.AppMeasurementService"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="false" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity"
+            android:theme="@style/Theme.IAPTheme" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
