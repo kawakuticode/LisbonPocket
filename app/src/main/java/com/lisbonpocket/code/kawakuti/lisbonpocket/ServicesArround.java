@@ -3,15 +3,28 @@ package com.lisbonpocket.code.kawakuti.lisbonpocket;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class ServicesArround extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class ServicesArround extends AppCompatActivity implements ItemAdapter.Listener {
 
     TextView curr_address;
+
+    RecyclerView mRecyclerView;
+    RecyclerView.LayoutManager mLayoutManager;
+    GridLayoutManager grid;
+    ItemAdapter mAdapter;
+    List<Item> mItems;
 
 
     private String[] listOfServices = {
@@ -29,6 +42,19 @@ public class ServicesArround extends AppCompatActivity {
             R.drawable.shoopings,
             R.drawable.transports
     };
+
+
+    public void prepareServices() {
+        mItems = new ArrayList<>();
+        for (int i = 0; i < listOfServices.length - 1; i++) {
+
+            Item temp = new Item();
+            temp.setType(listOfServices[i]);
+            temp.setIcon(mThumbIds[i]);
+            mItems.add(temp);
+        }
+
+    }
 
     private String[] servicesNames = {
             "Atm",
@@ -124,15 +150,32 @@ public class ServicesArround extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_services);
+        /*setContentView(R.layout.activity_services);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        curr_address = (TextView) findViewById(R.id.current_address);
+        curr_address = (TextView) findViewById(R.id.current_address);*/
+
+        prepareServices();
+
+        setContentView(R.layout.activity_service_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        assert mRecyclerView != null;
+
+        mRecyclerView.setHasFixedSize(true);
+       grid = new GridLayoutManager(this, 2);
+
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2);
+        ItemDecoration itemDecoration = new ItemDecoration(this, R.dimen.item_offset);
+        mRecyclerView.addItemDecoration(itemDecoration);
+        mRecyclerView.setLayoutManager(grid);
+
+        mAdapter = new ItemAdapter(mItems, this);
+        mRecyclerView.setAdapter(mAdapter);
 
         //we check the saved instancestate if in case you save the state of the application in a bundle,
         // when the activity activity needs to be recreated (e.g., orientation change)
 
-        if (savedInstanceState == null) {
+        /*  if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if (extras != null) {
                 curr_address.setText(extras.getString("Current_Address"));
@@ -144,7 +187,7 @@ public class ServicesArround extends AppCompatActivity {
         }
 
 
-        GridView gridView = (GridView) findViewById(R.id.gridview);
+      GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new CustomGridViewAdapter(ServicesArround.this, mThumbIds, listOfServices));
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -153,7 +196,7 @@ public class ServicesArround extends AppCompatActivity {
 
 
             }
-        });
+        });*/
     }
 
     //we check the saved instancestate if in case you save the state of the application in a bundle,
@@ -214,6 +257,12 @@ public class ServicesArround extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onItemClicked(Item item) {
+        if (item != null) {
+            Toast.makeText(this, "You just selected " + item.getType() + "!", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
 
 

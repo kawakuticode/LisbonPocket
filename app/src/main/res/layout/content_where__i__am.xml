@@ -12,12 +12,29 @@
     tools:context="com.lisbonpocket.code.kawakuti.lisbonpocket.Where_I_Am"
     tools:showIn="@layout/activity_where__i__am">
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="219dp"
+        android:layout_height="203dp"
+        android:layout_gravity="center"
+        android:src="@drawable/place"
+        android:layout_above="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Where Am I ?"
+        android:padding="10dp"
         android:id="@+id/textView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>

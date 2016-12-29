@@ -46,7 +46,7 @@ public class CustomGridViewAdapter extends BaseAdapter {
 
         if (row == null) {
 
-            row = inflater.inflate(R.layout.service_grid, parent, false);
+            row = inflater.inflate(R.layout.service_row, parent, false);
             holder = new RecordHolder();
             holder.txtTitle = (TextView) row.findViewById(R.id.item_text);
             holder.imageItem = (ImageView) row.findViewById(R.id.item_image);
