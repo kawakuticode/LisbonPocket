@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.lisbonpocket.code.kawakuti.lisbonpocket.Where_I_Am">
+    tools:context="com.lisbonpocket.code.kawakuti.worldpocket.kawakuticode.worldpocket.home.Where_I_Am">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -20,41 +20,35 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
+
     <RelativeLayout
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="219dp"
-            android:layout_height="203dp"
-            android:layout_gravity="center"
-            android:src="@drawable/place"
-            android:layout_above="@+id/textView"
-            android:layout_alignLeft="@+id/textView"
-            android:layout_alignStart="@+id/textView"
-            android:layout_alignRight="@+id/textView"
-            android:layout_alignEnd="@+id/textView" />
-
+        android:layout_height="match_parent"
+        >
 
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Where Am I ?"
-            android:padding="10dp"
-            android:id="@+id/textView"
+            android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:padding="10dp"
+            android:text="Where Am I ?"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </RelativeLayout>
 
-    <!--<include layout="@layout/content_where__i__am" />-->
-
-
-
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="219dp"
+        android:layout_height="283dp"
+        android:layout_above="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_gravity="center"
+        android:src="@drawable/place" />
 </android.support.design.widget.CoordinatorLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lisbonpocket.code.kawakuti.lisbonpocket">
+    package="com.lisbonpocket.code.kawakuti.worldpocket">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -25,10 +25,10 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.lisbonpocket.code.kawakuti.worldpocket.kawakuticode.worldpocket.home.MainActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".SplashActivity"
+            android:name="com.lisbonpocket.code.kawakuti.worldpocket.kawakuticode.worldpocket.home.SplashActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Where_I_Am"
+            android:name="com.lisbonpocket.code.kawakuti.worldpocket.kawakuticode.worldpocket.home.Where_I_Am"
             android:label="@string/title_activity_where__i__am"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -44,17 +44,17 @@
                 android:value="@integer/google_play_services_version" />
         </activity>
         <activity
-            android:name=".ServicesArround"
+            android:name="com.lisbonpocket.code.kawakuti.worldpocket.kawakuticode.worldpocket.home.ServicesArround"
             android:label="@string/title_activity_services_arround"
             android:theme="@style/AppTheme.NoActionBar" />
 
 
         <activity
-            android:name=".ServiceChoosed"
+            android:name="com.lisbonpocket.code.kawakuti.worldpocket.kawakuticode.worldpocket.home.ServiceChoosed"
             android:label="@string/title_activity_recreation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".FindPlaces"
+            android:name="com.lisbonpocket.code.kawakuti.worldpocket.kawakuticode.worldpocket.home.FindPlaces"
             android:label="@string/title_activity_find_places"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
