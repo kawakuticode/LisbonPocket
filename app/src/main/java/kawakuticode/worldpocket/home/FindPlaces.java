@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -51,12 +52,17 @@ public class FindPlaces extends AppCompatActivity implements LocationListener {
         connectionDectector = new ConnectionDectector(this);
 
         try {
-            if (mMap == null) {
-                mMap = ((MapFragment) getFragmentManager().
-                        findFragmentById(R.id.map)).getMap();
-                mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-            }
-        } catch (Exception e) {
+            ((MapFragment) getFragmentManager().
+                    findFragmentById(R.id.map)).getMapAsync(new OnMapReadyCallback() {
+                @Override
+                public void onMapReady(GoogleMap googleMap) {
+                    mMap = googleMap;
+                }
+            });
+            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+
+    } catch (Exception e) {
             e.printStackTrace();
         }
         new GetPlaces(FindPlaces.this,
